@@ -1,0 +1,47 @@
+{
+  "name": "msisdn-formatter",
+  "version": "1.0.0",
+  "description": "Russian msisdn normalizer and formatter",
+  "author": "Dalee IA <dev@dalee.ru>",
+  "license": "MIT",
+  "main": "./dist/msisdn.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src/",
+    "test": "npm run lint && ./node_modules/.bin/mocha",
+    "build": "npm run lint && npm run lint && ./node_modules/.bin/gulp build"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dalee/msisdn-formatter"
+  },
+  "keywords": [
+    "msisdn"
+  ],
+  "files": [
+    "dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/Dalee/msisdn-formatter/issues"
+  },
+  "contributors": [
+    {
+      "name": "Nikita Safonov",
+      "email": "ns3777k@gmail.com"
+    }
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-plugin-transform-es2015-modules-umd": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "eslint": "^2.7.0",
+    "eslint-config-dalee": "^0.1.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "mocha": "^2.5.3",
+    "should": "^9.0.2"
+  }
+}
