@@ -70,7 +70,7 @@
     }
 
     /**
-     * Formats msisdn to clean format (cleaner or clean)
+     * Cleans msisdn (cleaner or clean)
      *
      * @param {string} msisdn
      * @param {boolean} [cleaner=false] Remove leading 7

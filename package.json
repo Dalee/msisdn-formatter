@@ -41,6 +41,8 @@
     "eslint-config-dalee": "^0.1.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.4",
     "mocha": "^2.5.3",
     "should": "^9.0.2"
   }
