@@ -10,6 +10,9 @@ charset = utf-8
 indent_style = space
 indent_size = 4
 
-[package.json]
+[*.{json|yml|yaml}]
 indent_style = space
 indent_size = 2
+
+[Makefile]
+indent_style = tab

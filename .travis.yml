@@ -1,13 +1,16 @@
-language: node_js
-
 sudo: false
-
+language: node_js
 node_js:
-  - "node"
-  - "5"
-  - "4"
-  - "0.10"
-  - "0.12"
+  - "6"
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install -g codecov
+  - npm install
 
 script:
-  - "npm test"
+  - make test-coverage
+  - codecov -f coverage/coverage.json
