@@ -13,9 +13,9 @@
  * }}
  */
 const patterns = {
-    validMsisdn      : /^7?[69]\d{9}$/,
-    notDigitsNorPlus : /[^\d\+]+/g,
-    cleanMsisdnParts : /^(?:\+?7|8)?(\d{3})(\d{3})(\d{2})(\d{2})$/
+    validMsisdn: /^7?[69]\d{9}$/,
+    notDigitsNorPlus: /[^\d\+]+/g,
+    cleanMsisdnParts: /^(?:\+?7|8)?(\d{3})(\d{3})(\d{2})(\d{2})$/
 };
 
 /**
@@ -24,11 +24,11 @@ const patterns = {
  * @default
  */
 const prettyFormats = {
-    cleaner : '$1$2$3$4',
-    clean   : '7$1$2$3$4',
-    short   : '$1 $2-$3$4',
-    usual   : '($1) $2-$3$4',
-    full    : '+7 ($1) $2-$3$4'
+    cleaner: '$1$2$3$4',
+    clean: '7$1$2$3$4',
+    short: '$1 $2-$3$4',
+    usual: '($1) $2-$3$4',
+    full: '+7 ($1) $2-$3$4'
 };
 
 /**
@@ -38,12 +38,12 @@ const prettyFormats = {
  * @param {string} [format=usual]
  * @returns {string}
  */
-export function pretty(msisdn, format='usual') {
+export function pretty(msisdn, format = 'usual') {
     const cleaned = clean(msisdn);
     if (!cleaned) {
         return msisdn;
     }
-    format = (format in prettyFormats)? format: 'usual';
+    format = (format in prettyFormats) ? format : 'usual';
     return cleaned.replace(patterns.cleanMsisdnParts, prettyFormats[format]);
 }
 
@@ -54,11 +54,11 @@ export function pretty(msisdn, format='usual') {
  * @param {boolean} [cleaner=false] Remove leading 7
  * @returns {?string}
  */
-export function clean(msisdn, cleaner=false) {
+export function clean(msisdn, cleaner = false) {
     if (typeof msisdn !== 'string') {
         return null;
     }
     const cleaned = msisdn.replace(patterns.notDigitsNorPlus, '');
-    msisdn = cleaned.replace(patterns.cleanMsisdnParts, cleaner? prettyFormats.cleaner: prettyFormats.clean);
-    return patterns.validMsisdn.test(msisdn)? msisdn: null;
+    msisdn = cleaned.replace(patterns.cleanMsisdnParts, cleaner ? prettyFormats.cleaner : prettyFormats.clean);
+    return patterns.validMsisdn.test(msisdn) ? msisdn : null;
 }

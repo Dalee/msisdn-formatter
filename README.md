@@ -1,13 +1,14 @@
 # msisdn-formatter
 
 [![Build Status](https://travis-ci.org/Dalee/msisdn-formatter.svg?branch=master)](https://travis-ci.org/Dalee/msisdn-formatter)
+[![Dependencies](https://david-dm.org/Dalee/msisdn-formatter.svg)](https://david-dm.org/Dalee/msisdn-formatter)
 
 Two simple function to normalize and format msisdn.
 
 ## Install
 
 ```
-$ npm install msisdn-formatter
+$ npm install msisdn-formatter --save
 ```
 
 ## Usage
