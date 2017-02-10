@@ -1,6 +1,7 @@
 # msisdn-formatter
 
 [![Build Status](https://travis-ci.org/Dalee/msisdn-formatter.svg?branch=master)](https://travis-ci.org/Dalee/msisdn-formatter)
+[![codecov](https://codecov.io/gh/Dalee/msisdn-formatter/branch/master/graph/badge.svg)](https://codecov.io/gh/Dalee/msisdn-formatter)
 [![Dependencies](https://david-dm.org/Dalee/msisdn-formatter.svg)](https://david-dm.org/Dalee/msisdn-formatter)
 
 Two simple function to normalize and format msisdn.
