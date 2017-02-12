@@ -6,7 +6,9 @@
   "license": "MIT",
   "main": "./dist/msisdn.js",
   "scripts": {
-    "build": "./node_modules/.bin/gulp build"
+    "test": "make test",
+    "build": "make build",
+    "prepublish": "npm run build"
   },
   "engines": {
     "node": ">= 6.9.2"
