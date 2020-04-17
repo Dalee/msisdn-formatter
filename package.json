@@ -39,7 +39,7 @@
     "babel-istanbul": "^0.12.1",
     "babel-plugin-transform-es2015-modules-umd": "^6.22.0",
     "babel-preset-es2015": "^6.22.0",
-    "eslint": "^3.15.0",
+    "eslint": "^4.18.2",
     "eslint-config-dalee": "^0.1.6",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
