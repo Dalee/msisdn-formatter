@@ -1,6 +1,6 @@
 {
   "name": "msisdn-formatter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Russian msisdn normalizer and formatter",
   "author": "Dalee IA <dev@dalee.ru>",
   "license": "MIT",
