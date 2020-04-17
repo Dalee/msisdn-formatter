@@ -23,28 +23,46 @@ const patterns = {
  * @type {object}
  * @default
  */
-const prettyFormats = {
-    cleaner: '$1$2$3$4',
-    clean: '7$1$2$3$4',
-    short: '$1 $2-$3$4',
-    usual: '($1) $2-$3$4',
-    full: '+7 ($1) $2-$3$4'
+export const PrettyFormats = {
+    CLEANER: 'cleaner',
+    CLEAN: 'clean',
+    SHORT: 'short',
+    USUAL: 'usual',
+    FULL: 'full'
+};
+
+/**
+ * @constant
+ * @type {object}
+ * @default
+ */
+const prettyFormatsRegExp = {
+    [PrettyFormats.CLEANER]: '$1$2$3$4',
+    [PrettyFormats.CLEAN]: '7$1$2$3$4',
+    [PrettyFormats.SHORT]: '$1 $2-$3$4',
+    [PrettyFormats.USUAL]: '($1) $2-$3$4',
+    [PrettyFormats.FULL]: '+7 ($1) $2-$3$4'
 };
 
 /**
  * Makes msisdn pretty
  *
- * @param {string} msisdn
+ * @param {number|string} msisdn
  * @param {string} [format=usual]
  * @returns {string}
  */
 export function pretty(msisdn, format = 'usual') {
-    const cleaned = clean(msisdn);
-    if (!cleaned) {
-        return msisdn;
+    let msisdnStr = msisdn;
+    if (typeof msisdnStr === 'number') {
+        msisdnStr = String(msisdn);
     }
-    format = (format in prettyFormats) ? format : 'usual';
-    return cleaned.replace(patterns.cleanMsisdnParts, prettyFormats[format]);
+
+    const cleaned = clean(msisdnStr);
+    if (!cleaned) {
+        return msisdnStr;
+    }
+    format = (format in prettyFormatsRegExp) ? format : 'usual';
+    return cleaned.replace(patterns.cleanMsisdnParts, prettyFormatsRegExp[format]);
 }
 
 /**
@@ -59,6 +77,6 @@ export function clean(msisdn, cleaner = false) {
         return null;
     }
     const cleaned = msisdn.replace(patterns.notDigitsNorPlus, '');
-    msisdn = cleaned.replace(patterns.cleanMsisdnParts, cleaner ? prettyFormats.cleaner : prettyFormats.clean);
+    msisdn = cleaned.replace(patterns.cleanMsisdnParts, cleaner ? prettyFormatsRegExp.cleaner : prettyFormatsRegExp.clean);
     return patterns.validMsisdn.test(msisdn) ? msisdn : null;
 }

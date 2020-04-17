@@ -21,7 +21,8 @@
     "msisdn"
   ],
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "bugs": {
     "url": "https://github.com/Dalee/msisdn-formatter/issues"
